@@ -24,6 +24,8 @@ private:
 	RECT			_rcWorld;
 	RECT			_rcClient;
 
+	RECT			HWANGGYUSEOB;
+
 	//=============================================
 
 public:
