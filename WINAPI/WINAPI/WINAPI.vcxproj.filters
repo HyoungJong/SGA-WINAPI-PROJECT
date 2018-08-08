@@ -37,6 +37,24 @@
     <Filter Include="mainGame">
       <UniqueIdentifier>{e7e760c6-5166-4da4-a55b-c735a293083b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2DFrameWork\camera">
+      <UniqueIdentifier>{30a73bc7-904e-42b1-b894-5f2843e5eca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="class">
+      <UniqueIdentifier>{cdd073d9-d399-469d-a973-6238f731c14d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="class\player">
+      <UniqueIdentifier>{794f9891-9646-4518-91b5-1c5dc632a3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="class\block">
+      <UniqueIdentifier>{f2c6df5f-a03e-4960-a4e0-760cdfd4b1e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="class\mob">
+      <UniqueIdentifier>{d777acad-0c43-4ba1-8fff-c29910f030d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="class\background">
+      <UniqueIdentifier>{3f9e8677-67bb-4728-8606-1802afdc2746}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -64,7 +82,19 @@
       <Filter>2DFrameWork\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>2DFrameWork\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="mob.cpp">
+      <Filter>class\mob</Filter>
+    </ClCompile>
+    <ClCompile Include="block.cpp">
+      <Filter>class\block</Filter>
+    </ClCompile>
+    <ClCompile Include="background.cpp">
+      <Filter>class\background</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>class\player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +132,19 @@
       <Filter>2DFrameWork\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>2DFrameWork\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="mob.h">
+      <Filter>class\mob</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>class\block</Filter>
+    </ClInclude>
+    <ClInclude Include="background.h">
+      <Filter>class\background</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>class\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

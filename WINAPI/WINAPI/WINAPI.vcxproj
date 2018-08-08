@@ -116,6 +116,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="backBuffer.cpp" />
+    <ClCompile Include="background.cpp" />
+    <ClCompile Include="block.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="gameNode.cpp" />
     <ClCompile Include="Image.cpp" />
@@ -123,10 +125,14 @@
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainGame.cpp" />
+    <ClCompile Include="mob.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="utill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="backBuffer.h" />
+    <ClInclude Include="background.h" />
+    <ClInclude Include="block.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="Game.h" />
@@ -135,6 +141,8 @@
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="mainGame.h" />
+    <ClInclude Include="mob.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="randomFunction.h" />
     <ClInclude Include="singletonBase.h" />
     <ClInclude Include="utill.h" />

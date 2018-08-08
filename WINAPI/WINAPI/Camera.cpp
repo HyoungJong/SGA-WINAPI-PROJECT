@@ -2,7 +2,6 @@
 #include "Camera.h"
 
 
-
 Camera::Camera()
 {
 }
@@ -40,8 +39,16 @@ void Camera::update()
 	}
 
 	// 카메라 위치는 중앙에 타겟, 클라이언트 절반을 기준
+	// 오른쪽으로 이동
+	
 	if (ptTarget->x > rcClient.right / 2)
+	{
 		ptPos->x = ptTarget->x - rcClient.right / 2;
+	}
+
+	//if (ptTarget->x > rcClient.right/ 3)
+		//ptPos->x = ptTarget->x - rcClient.right * 2 / 3;
+
 	if (ptTarget->y > rcClient.bottom / 2)
 		ptPos->y = ptTarget->y - rcClient.bottom / 2;
 

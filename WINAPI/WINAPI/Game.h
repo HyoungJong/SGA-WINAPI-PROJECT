@@ -24,8 +24,8 @@ using std::map;
 // 매크로
 #define WINSTARTX 50
 #define WINSTARTY 50
-#define WINSIZEX  1200
-#define WINSIZEY  800
+#define WINSIZEX  300
+#define WINSIZEY  200
 
 // 각종 매크로 디파인 추가 부분
 #define IMAGEMANAGER	ImageManager::getSingleton()

@@ -1,6 +1,5 @@
 #pragma once
 #include "gameNode.h"
-#include "list"
 
 class Image;
 
@@ -14,15 +13,12 @@ class mainGame : public GameNode
 {
 private:
 	//=============================================
-	// 배경
-	Image*			_background;
-	// 캐릭터
-	Image*			_siva;
-	int				_sivaIndex, _sivaCount, _sivaDirection;
+	
+	
+	
 	POINT*			_pPlayer;
 
-	RECT			_rcWorld;
-	RECT			_rcClient;
+	
 
 	//=============================================
 
@@ -31,7 +27,6 @@ public:
 	~mainGame();
 
 	//=============================================
-	
 
 	//============================================
 	virtual HRESULT init();

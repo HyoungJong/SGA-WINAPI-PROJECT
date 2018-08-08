@@ -1,7 +1,13 @@
 #include "Game.h"
 #include "mainGame.h"
-#include "Image.h"
 #include "utill.h"
+#include "background.h"
+#include "block.h"
+#include "mob.h"
+#include "player.h"
+
+background Background;
+player	   Player;
 
 mainGame::mainGame()
 {
@@ -17,30 +23,22 @@ HRESULT mainGame::init()
 {
 	GameNode::init(true);
 
-	GetClientRect(g_hWnd, &_rcClient);
-
 	//===================================================================
 
-	_background = IMAGEMANAGER->addImage(TEXT("BackGround"), TEXT("space.bmp"), 1920, 1080, true, RGB(255, 0, 255));
+	Background.backgroundInit();
+	
+	Player.marioInit();
 
-	_siva = IMAGEMANAGER->addFrameImage(TEXT("SivaRun"), TEXT("Sivarun.bmp"), 440, 108, 8, 2, true, RGB(255, 0, 255));
-
-	// 초기 위치
-	_siva->setX(WINSIZEX / 2 - 200);
-	_siva->setY(WINSIZEY - 100);
-
+	
 	_pPlayer = new POINT;
 	_pPlayer->x = WINSIZEX / 2 - 200;
 	_pPlayer->y = WINSIZEY - 100;
 
-	_sivaIndex = 2;
-	_sivaCount = 0;
-	_sivaDirection = RIGHT;
+	
 
-	_rcWorld = { 0,0,1920,1080 };
-	_rcClient = { 0,0,WINSIZEX, WINSIZEY };
+	
 
-	if (CAMERA->init(_pPlayer, _rcClient, _rcWorld) == false)
+	if (CAMERA->init(_pPlayer, Background.getClient(), Background.getWorld()) == false)
 		return false;
 
 	//===================================================================
@@ -59,56 +57,10 @@ void mainGame::update()
 	
 	//===================================================================
 
-	if (KEYMANAGER->isStayKeyDown(VK_RIGHT))
-	{
-		_siva->setX(_siva->getX() + 3);
-		_pPlayer->x += _sivaDirection = RIGHT;
-		if (_sivaIndex < 2)
-			_sivaIndex = 2;
-		_siva->setFrameY(RIGHT);
-	}
+	Player.marioUpdate();
 
-	if (KEYMANAGER->isStayKeyDown(VK_LEFT))
-	{
-		_siva->setX(_siva->getX() - 3);
-		_sivaDirection = LEFT;
-		if (_sivaIndex > 5)
-			_sivaIndex = 5;
-		_siva->setFrameY(LEFT);
-	}
-
-	if (KEYMANAGER->isStayKeyDown(VK_UP))
-	{
-		_siva->setY(_siva->getY() - 3);
-	}
-
-	if (KEYMANAGER->isStayKeyDown(VK_DOWN))
-	{
-		_siva->setY(_siva->getY() + 3);
-	}
-
-	_sivaCount++;
-	if (_sivaCount % 10 == 0)
-	{
-		if (_sivaDirection == LEFT)
-		{
-			if (_sivaIndex <= 0)
-				_sivaIndex = 5;
-			_sivaIndex--;
-			_siva->setFrameX(_sivaIndex);
-		}
-		else if (_sivaDirection == RIGHT)
-		{
-			if (_sivaIndex >= _siva->getMaxFrameX())
-				_sivaIndex = 2;
-			_sivaIndex++;
-			_siva->setFrameX(_sivaIndex);
-		}
-		_sivaCount = 0;
-	}
-
-	_pPlayer->x = _siva->getX();
-	_pPlayer->y = _siva->getY();
+	_pPlayer->x = Player.getmarioX();
+	_pPlayer->y = Player.getmarioY();
 
 	CAMERA->update();
 
@@ -119,13 +71,19 @@ void mainGame::update()
 void mainGame::render()
 {
 	//HDC backDC = this->getBackBuffer()->getMemDC();
-	PatBlt(getMemDC(), 0, 0, _rcClient.right, _rcClient.bottom, WHITENESS);
+	PatBlt(getMemDC(), 0, 0, Background.getClient().right, Background.getClient().bottom, WHITENESS);
 
 	//===================================================================
 
-	_background->render(getMemDC(), 0, 0, CAMERA->getPosition()->x, CAMERA->getPosition()->y, WINSIZEX, WINSIZEY);
+	Background.backgroundRender(getMemDC());
+	
+	Player.marioRender(getMemDC());
 
-	IMAGEMANAGER->frameRender(TEXT("SivaRun"), getMemDC(), _siva->getX() - CAMERA->getPosition()->x, _siva->getY() - CAMERA->getPosition()->y, _siva->getFrameX(), _siva->getFrameY());
+	/*
+	TCHAR szTemp[100] = { 0, };
+	_stprintf_s(szTemp, sizeof(szTemp), TEXT("pos %d, %d   target %d, %d"), CAMERA->getPosition()->x, CAMERA->getPosition()->y, CAMERA->getTargetPos()->x, CAMERA->getTargetPos()->y);
+	TextOut(getMemDC(), 20, 20, szTemp, _tcslen(szTemp));
+	*/
 
 	//===================================================================
 	this->getBackBuffer()->render(getHDC(), 0, 0);
