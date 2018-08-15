@@ -3,22 +3,14 @@
 
 class Image;
 
-enum ST_DIR
-{
-	RIGHT,
-	LEFT,
-};
-
 class mainGame : public GameNode
 {
 private:
 	//=============================================
 	
-	
-	
 	POINT*			_pPlayer;
 
-	
+	RECT			HWANGGYUSEOB;
 
 	//=============================================
 

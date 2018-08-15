@@ -8,6 +8,7 @@
 
 background Background;
 player	   Player;
+block	   Block;
 
 mainGame::mainGame()
 {
@@ -29,13 +30,11 @@ HRESULT mainGame::init()
 	
 	Player.marioInit();
 
+	Block.blockInit();
 	
 	_pPlayer = new POINT;
 	_pPlayer->x = WINSIZEX / 2 - 200;
 	_pPlayer->y = WINSIZEY - 100;
-
-	
-
 	
 
 	if (CAMERA->init(_pPlayer, Background.getClient(), Background.getWorld()) == false)
@@ -79,11 +78,13 @@ void mainGame::render()
 	
 	Player.marioRender(getMemDC());
 
-	/*
+	Block.blockRender(getMemDC());
+
+	
 	TCHAR szTemp[100] = { 0, };
 	_stprintf_s(szTemp, sizeof(szTemp), TEXT("pos %d, %d   target %d, %d"), CAMERA->getPosition()->x, CAMERA->getPosition()->y, CAMERA->getTargetPos()->x, CAMERA->getTargetPos()->y);
 	TextOut(getMemDC(), 20, 20, szTemp, _tcslen(szTemp));
-	*/
+	
 
 	//===================================================================
 	this->getBackBuffer()->render(getHDC(), 0, 0);

@@ -15,9 +15,9 @@ background::~background()
 
 void background::backgroundInit()
 {
-	_background = IMAGEMANAGER->addImage(TEXT("BackGround"), TEXT("2STAGE.bmp"), 1424, 223, true, RGB(255, 0, 255));
+	_background = IMAGEMANAGER->addImage(TEXT("BackGround"), TEXT("2STAGE.bmp"), 6000, 800, true, RGB(255, 0, 255));
 
-	_rcWorld = { 0,0,1424,223 };
+	_rcWorld = { 0,0,6000,800 };
 	_rcClient = { 0,0,WINSIZEX, WINSIZEY };
 }
 
