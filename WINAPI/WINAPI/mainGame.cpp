@@ -32,12 +32,12 @@ HRESULT mainGame::init()
 
 	Block.blockInit();
 	
-	_pPlayer = new POINT;
-	_pPlayer->x = WINSIZEX / 2 - 200;
-	_pPlayer->y = WINSIZEY - 100;
-	
+	_pPlayerCoordinate = new POINT;
+	_pPlayerCoordinate->x = WINSIZEX / 2 - 200;
+	_pPlayerCoordinate->y = WINSIZEY - 100;
 
-	if (CAMERA->init(_pPlayer, Background.getClient(), Background.getWorld()) == false)
+
+	if (CAMERA->init(_pPlayerCoordinate, Background.getClient(), Background.getWorld()) == false)
 		return false;
 
 	//===================================================================
@@ -56,12 +56,16 @@ void mainGame::update()
 	
 	//===================================================================
 
+	_pPlayerCoordinate->x = Player.getmarioX();
+	_pPlayerCoordinate->y = Player.getmarioY();
+
 	Player.marioUpdate();
-
-	_pPlayer->x = Player.getmarioX();
-	_pPlayer->y = Player.getmarioY();
-
+	
 	CAMERA->update();
+
+	Block.blockCollision(&Player);
+
+	GetCursorPos(&_pt);
 
 	//===================================================================
 
@@ -82,7 +86,9 @@ void mainGame::render()
 
 	
 	TCHAR szTemp[100] = { 0, };
-	_stprintf_s(szTemp, sizeof(szTemp), TEXT("pos %d, %d   target %d, %d"), CAMERA->getPosition()->x, CAMERA->getPosition()->y, CAMERA->getTargetPos()->x, CAMERA->getTargetPos()->y);
+	_stprintf_s(szTemp, sizeof(szTemp), TEXT("pos %d, %d   target %d, %d  mouse %d, %d  block %d, %d, %d, %d"),
+		CAMERA->getPosition()->x, CAMERA->getPosition()->y, CAMERA->getTargetPos()->x, CAMERA->getTargetPos()->y,
+		_pt.x, _pt.y, Player.marioRect().left, Player.marioRect().top, Player.marioRect().right, Player.marioRect().bottom);
 	TextOut(getMemDC(), 20, 20, szTemp, _tcslen(szTemp));
 	
 

@@ -140,6 +140,16 @@ public:
 		return rc;
 	}
 
+	inline RECT marioboundingBox()
+	{
+		RECT   rc = RectMake(int(_imageInfo->x - 20),
+			int(_imageInfo->y + 20),
+			int(_imageInfo->frameWidth),
+			int(_imageInfo->frameHeight));
+
+		return rc;
+	}
+
 	inline void setFrameX(int frameX)
 	{
 		_imageInfo->currentFrameX = frameX;

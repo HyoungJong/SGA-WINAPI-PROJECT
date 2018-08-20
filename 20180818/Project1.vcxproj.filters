@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="2DGameFramework">
+      <UniqueIdentifier>{5fd964d0-0e98-4976-bbea-853ac576eccd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{335d6783-865c-4bea-8f83-7fafe0186f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\singletonBase">
+      <UniqueIdentifier>{f6b0193a-46e6-4ea0-9dce-f8457b1680c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Manager">
+      <UniqueIdentifier>{1043e29c-9c80-489e-b128-a54259e5c5b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\BackBuffer">
+      <UniqueIdentifier>{740de2f0-0f97-4f32-a0d2-eb23956dd5e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Util">
+      <UniqueIdentifier>{45a800e0-d054-4218-a995-80e4cbeaa71f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Image">
+      <UniqueIdentifier>{a180df48-65f5-4d8d-a8c4-4c1273e6d310}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Camera">
+      <UniqueIdentifier>{a53f7032-e759-4769-9c33-858a9812f020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\txtData">
+      <UniqueIdentifier>{7b0158a8-5b33-4663-9612-f05eeccdf480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\ProgressBar">
+      <UniqueIdentifier>{733366b8-2108-4f26-bb26-2f20dc8dc162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Timer">
+      <UniqueIdentifier>{ed631e05-8eb2-41fe-aeaa-97391e291a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Animation">
+      <UniqueIdentifier>{5294362f-629c-425b-8273-1b3e07193b4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\Effect">
+      <UniqueIdentifier>{fcd17e8f-79b9-490f-9578-4130b5c6c0fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\00.AnimationTest">
+      <UniqueIdentifier>{2867fe83-54d0-4059-a164-52c269d30c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\gameNode">
+      <UniqueIdentifier>{e57555f9-f455-492c-a3f8-c73c9f5d10ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2DGameFramework\pixelCollision">
+      <UniqueIdentifier>{20348441-32c9-4785-83fc-d9328087dfba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{6a7ad030-856d-4936-b4ce-2657020807cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\block">
+      <UniqueIdentifier>{c15268ce-3d62-4ec1-842a-d8c08313cfa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\mob">
+      <UniqueIdentifier>{c20d7a1f-3247-4b62-bdd6-4461dd390699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\player">
+      <UniqueIdentifier>{4b664a69-5bcd-4b08-bea6-8549a01a1b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\collision">
+      <UniqueIdentifier>{af80decb-e03f-40a5-99d5-bf74a0ca3b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class\background">
+      <UniqueIdentifier>{e7e833a0-04d3-477c-a5af-9cac621c4721}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="mainGame.cpp">
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="backBuffer.cpp">
+      <Filter>2DGameFramework\BackBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>2DGameFramework\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>2DGameFramework\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="txtData.cpp">
+      <Filter>2DGameFramework\txtData</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>2DGameFramework\ProgressBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>2DGameFramework\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="timerManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>2DGameFramework\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>2DGameFramework\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationTest.cpp">
+      <Filter>MainGame\00.AnimationTest</Filter>
+    </ClCompile>
+    <ClCompile Include="gameNode.cpp">
+      <Filter>2DGameFramework\gameNode</Filter>
+    </ClCompile>
+    <ClCompile Include="pixelCollision.cpp">
+      <Filter>2DGameFramework\pixelCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="background.cpp">
+      <Filter>Class\background</Filter>
+    </ClCompile>
+    <ClCompile Include="block.cpp">
+      <Filter>Class\block</Filter>
+    </ClCompile>
+    <ClCompile Include="mob.cpp">
+      <Filter>Class\mob</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Class\player</Filter>
+    </ClCompile>
+    <ClCompile Include="collision.cpp">
+      <Filter>Class\collision</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="singletonBase.h">
+      <Filter>2DGameFramework\singletonBase</Filter>
+    </ClInclude>
+    <ClInclude Include="mainGame.h">
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="backBuffer.h">
+      <Filter>2DGameFramework\BackBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>2DGameFramework\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>2DGameFramework\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>2DGameFramework\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="txtData.h">
+      <Filter>2DGameFramework\txtData</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>2DGameFramework\ProgressBar</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>2DGameFramework\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="timerManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>2DGameFramework\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="commonMacroFunction.h">
+      <Filter>2DGameFramework\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="randomFunction.h">
+      <Filter>2DGameFramework\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>2DGameFramework\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationTest.h">
+      <Filter>MainGame\00.AnimationTest</Filter>
+    </ClInclude>
+    <ClInclude Include="gameNode.h">
+      <Filter>2DGameFramework\gameNode</Filter>
+    </ClInclude>
+    <ClInclude Include="pixelCollision.h">
+      <Filter>2DGameFramework\pixelCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="background.h">
+      <Filter>Class\background</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>Class\block</Filter>
+    </ClInclude>
+    <ClInclude Include="mob.h">
+      <Filter>Class\mob</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Class\player</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
+      <Filter>Class\collision</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

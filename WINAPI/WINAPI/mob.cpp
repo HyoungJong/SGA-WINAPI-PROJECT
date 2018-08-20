@@ -1,7 +1,5 @@
 #include "mob.h"
 
-
-
 mob::mob()
 {
 }

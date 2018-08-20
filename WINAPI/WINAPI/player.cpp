@@ -20,9 +20,15 @@ void player::marioInit()
 	_mario->setX(20);
 	_mario->setY(150);
 
+	// 움직임 방향에 관한거
 	_marioIndex = 0;
 	_marioCount = 0;
 	_marioDirection = RIGHT;
+
+	// 점프에 관한거
+	_marioJump = false;
+	_marioJumpPower = 0.f;
+	_marioGravity = 0.f;
 }
 
 void player::marioUpdate()
@@ -69,14 +75,43 @@ void player::marioUpdate()
 		_mario->setY(_mario->getY() + 3);
 	}
 
-	if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+	if (_marioJump == false)
 	{
+		if (KEYMANAGER->isOnceKeyDown(VK_SPACE))
+		{
+			_marioJump = true;
+			_marioJumpPower = 8.0f;
+		}
+	}
 
+	_marioGravity = 0.2f;
+
+	_marioJumpPower -= _marioGravity;
+	_mario->setY(_mario->getY() - _marioJumpPower);
+
+	if (_mario->getY() > 645)
+	{
+		_marioGravity = 0;
+		_marioJumpPower = 0;
+		_mario->setY(645);
+		_marioJump = false;
 	}
 	
+	// 충돌하는 마리오 크기의 사각형 설정
+	_marioRect = { _mario->marioboundingBox().left + 30, _mario->marioboundingBox().top - 5,
+		_mario->marioboundingBox().right + 8, _mario->marioboundingBox().bottom - 35 };
 }
 
 void player::marioRender(HDC _hdc)
 {
 	IMAGEMANAGER->frameRender(TEXT("Mario"), _hdc, _mario->getX() - CAMERA->getPosition()->x, _mario->getY() - CAMERA->getPosition()->y, _mario->getFrameX(), _mario->getFrameY());
+
+	if(KEYMANAGER->isToggleKey('T'))
+		Rectangle(_hdc, _marioRect.left - CAMERA->getPosition()->x, _marioRect.top - CAMERA->getPosition()->y,
+			_marioRect.right - CAMERA->getPosition()->x, _marioRect.bottom - CAMERA->getPosition()->y);
+}
+
+RECT player::marioRect()
+{
+	return _marioRect;
 }

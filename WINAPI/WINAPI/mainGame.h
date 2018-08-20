@@ -8,9 +8,9 @@ class mainGame : public GameNode
 private:
 	//=============================================
 	
-	POINT*			_pPlayer;
-
-	RECT			HWANGGYUSEOB;
+	POINT*			_pPlayerCoordinate;
+	POINT			_pt;
+	LPARAM			lParam;
 
 	//=============================================
 

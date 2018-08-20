@@ -1,9 +1,11 @@
 #pragma once
+
+class player;
+
 class block
 {
 private:
 	Image * _block;
-
 
 public:
 	block();
@@ -11,5 +13,7 @@ public:
 
 	void	blockInit();
 	void	blockRender(HDC _hdc);
+	void	blockCollision(player* target);
+	RECT	blockBox();
 };
 
