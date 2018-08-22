@@ -63,6 +63,7 @@ void AnimationTest::update()
 		GetCursorPos(&g_ptMouse);
 		ScreenToClient(g_hWnd, &g_ptMouse);
 		EFFECTMANAGER->Play(TEXT("Effect1"), g_ptMouse);
+
 	}
 
 	if (KEYMANAGER->isOnceKeyDown(VK_RBUTTON))

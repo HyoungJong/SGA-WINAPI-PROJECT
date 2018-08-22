@@ -35,6 +35,7 @@ void Camera::update()
 		return;
 	}
 
+
 	if (ptTarget->x > rcClient.right / 2)
 		ptPos->x = ptTarget->x - rcClient.right / 2;
 	if (ptTarget->y > rcClient.bottom / 2)

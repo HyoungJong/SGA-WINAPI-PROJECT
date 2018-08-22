@@ -1,5 +1,6 @@
 #pragma once
 
+#define ABC 10
 class player;
 class block;
 class mob;

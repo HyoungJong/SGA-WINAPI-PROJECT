@@ -1,5 +1,7 @@
 #pragma once
 
+#define MARIO_DEAD_IMAGE 6
+
 enum direction
 {
 	RIGHT,
@@ -14,6 +16,11 @@ private:
 
 	bool		_marioJump;
 	float		_marioJumpPower, _marioGravity;
+
+	bool		_marioDead, _marioStart;
+	int			_marioDeadTime;
+
+	POINT*		_resetCamera;
 
 
 public:
@@ -40,4 +47,7 @@ public:
 	bool		getmarioJump() { return _marioJump; }
 
 	RECT		marioRect();
+
+	void		marioEnd();
+	void		marioEndMotion();
 };

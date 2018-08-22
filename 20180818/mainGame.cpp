@@ -6,12 +6,14 @@
 #include "mob.h"
 #include "player.h"
 #include "collision.h"
+#include "Effects.h"
 
 background Background;
 player	   Player;
 block	   Block;
 mob		   Mob;
 collision  Collision;
+Effects	   effects;
 
 mainGame::mainGame()
 {
@@ -84,17 +86,21 @@ void mainGame::render()
 
 	// 각 클레스 렌더
 	Background.backgroundRender(getMemDC());
-	Player.marioRender(getMemDC());
-	Block.blockRender(getMemDC());
 	Mob.mobRender(getMemDC());
+	Block.blockRender(getMemDC());
+	Player.marioRender(getMemDC());
+	Block.blockRenderAfterPlayer(getMemDC());
 	
-	/*
+	
+	
 	// 텍스트 출력
+	
 	TCHAR szTemp[100] = { 0, };
-	_stprintf_s(szTemp, sizeof(szTemp), TEXT("원하는 값  %d, %d"),
-		(Mob.mushroomRect().left + Mob.mushroomRect().right) / 2, (Player.marioRect().left + Player.marioRect().right)/2);
+	_stprintf_s(szTemp, sizeof(szTemp), TEXT("원하는 값  %f, %f , %d, %d, %d, %d"),
+		Player.getmarioX(), Player.getmarioY(), CAMERA->getPosition()->x, CAMERA->getPosition()->y,
+		_pPlayerCoordinate->x, _pPlayerCoordinate->y);
 	TextOut(getMemDC(), 20, 20, szTemp, _tcslen(szTemp));
-	*/
+	
 
 	//===================================================================
 	this->getBackBuffer()->render(getHDC(), 0, 0);
